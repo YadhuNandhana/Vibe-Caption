@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Caption</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="brand">
+      <h2>Vibe Caption</h2>
+      <p>AI captions that match your vibe</p>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-left">
+      <p class="script-line">every photo has a feeling.</p>
+      <h1>Drop a pic. Get a<br>caption that <span class="accent">hits</span>.</h1>
+      <p class="hero-copy">
+        Our AI reads the vibe behind your photo and writes words that
+        fit it perfectly — poetic, funny, minimal, or bold.
+      </p>
+      <div class="note-tag">
+        <span class="note-tape"></span>
+        <p>good photos deserve good words. ♡</p>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="polaroid">
+        <span class="poly-tape"></span>
+
+        <div class="dropzone" id="uploadZone">
+          <input type="file" id="fileInput" accept="image/*" multiple hidden />
+          <div class="preview-grid" id="previewGrid" hidden></div>
+          <div class="upload-prompt" id="uploadPrompt">
+            <span class="upload-icon">🖼️</span>
+            <p class="upload-title">DROP YOUR PHOTOS HERE</p>
+            <p class="upload-sub">or click to upload (1–6 images)</p>
+          </div>
+        </div>
+
+        <p class="script-line polaroid-caption">let's find the words. ♡</p>
+      </div>
+
+      <div class="context-note">
+        <label for="contextInput" class="context-label">add a little context (optional)</label>
+        <textarea id="contextInput" class="context-input" placeholder="e.g. graduation day, reunion trip with friends..." maxlength="200"></textarea>
+      </div>
+
+      <button id="generateBtn" class="find-btn" disabled>Find my caption</button>
+
+      <section class="result-note" id="resultCard" hidden>
+        <p class="status-label" id="statusLabel">writing...</p>
+        <p class="caption-text" id="captionText"></p>
+        <div class="tag-row" id="tagRow"></div>
+        <button class="copy-btn" id="copyBtn" hidden>Copy it</button>
+        <div class="songs-note" id="songsNote" hidden>
+          <select id="languageSelect" class="language-select">
+            <option value="Tamil">Tamil</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Malayalam">Malayalam</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Kannada">Kannada</option>
+            <option value="French">French</option>
+          </select>
+          <button class="songs-btn" id="songsBtn">Suggest songs</button>
+        </div>
+        <div class="song-list" id="songList" hidden></div>
+      </section>
+      <section class="privacy-note" id="privacyNote" hidden>
+        <p class="privacy-label">heads up, worth a quick look</p>
+        <ul class="privacy-list" id="privacyList"></ul>
+      </section>
+      <section class="palette-note" id="paletteSection" hidden>
+        <button class="palette-btn" id="paletteBtn" type="button">🎨 Show color palette</button>
+        <div class="palette-results" id="paletteResults"></div>
+      </section>
+      <section class="history-section" id="historySection" hidden>
+        <h3 class="history-title">your recent captions</h3>
+        <div class="history-list" id="historyList"></div>
+      </section>
+    </div>
+  </main>
+
+  <section class="features">
+    <div class="feature">
+      <span>✨</span>
+      <p>Understands<br>the vibe</p>
+    </div>
+    <div class="feature">
+      <span>♡</span>
+      <p>Writes with<br>feeling</p>
+    </div>
+    <div class="feature">
+      <span>🖋</span>
+      <p>Captions you<br>will actually use</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
